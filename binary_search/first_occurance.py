@@ -17,11 +17,20 @@ def find_first_index_v1(arr, target):
             low = middle + 1
     return ans
 
-
+def find_first_index_v2(arr, target):
+    low = 0
+    high = len(arr)
+    while high > low + 1:
+        middle = (high + low)//2
+        if arr[middle] >= target:
+            high = middle
+        else:
+            low = middle
+    return low
 
 if __name__ == "__main__":
     arr = list(map(int, input().split()))
     target = int(input())
     
-    print("First Occure At : ", find_first_index_v1(arr, target))
+    print("First Occure At : ", find_first_index_v2(arr, target))
     
