@@ -3,7 +3,7 @@ def find_first_index_v1(arr, target):
     
     high = len(arr) - 1
     
-    ans = 0
+    ans = -1
     
     
     while low <= high:
@@ -26,11 +26,19 @@ def find_first_index_v2(arr, target):
             high = middle
         else:
             low = middle
-    return low
+    print(low, high)
+    if arr[low] == target:
+        return low
+    if arr[high] == target:
+        return high
+    else:
+        return -1
 
 if __name__ == "__main__":
     arr = list(map(int, input().split()))
     target = int(input())
+    
+    find_first_index_v2(arr, target)
     
     print("First Occure At : ", find_first_index_v2(arr, target))
     
