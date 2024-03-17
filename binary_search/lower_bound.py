@@ -15,6 +15,19 @@ def lower_bound(arr, target):
         return high
     else:
         return len(arr)
+    
+def lower_bound2(arr, target):
+    low = 0
+    high = len(arr)
+    
+    while low < high:
+        middle = (low + high) // 2
+        if arr[middle] >= target:
+            high = middle
+        else:
+            low = middle + 1
+            
+    return low
 
 
 
@@ -25,4 +38,4 @@ if __name__ == "__main__":
     
     target = int(input())
     
-    print("Lower Bound : ", lower_bound(arr, target))
+    print("Lower Bound : ", lower_bound2(arr, target))
