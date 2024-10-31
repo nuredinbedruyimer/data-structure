@@ -57,17 +57,5 @@ class SegmentTree:
 arr = [1, 2, 3, 4, 5, 6]
 seg_tree = SegmentTree(arr)
 
-left =  0
-right =  3
-
-index = 0
-value = 11
-
-seg_tree.update(index, value)
-print(seg_tree.tree)
-
-value = seg_tree.query(left, right)
-print("Sum In The Range Of ", "left = ", left, "right = ", right, "is : ", value)
-            
-            
+       
             
