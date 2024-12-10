@@ -7,6 +7,8 @@ class Stack:
         return "Stack is Empty" if self.top == -1  else self.top
     def is_empty(self):
         return self.top == -1
+    def length(self):
+        return self.top + 1
     def is_full(self):
         return self.capacity - 1 == self.top
     def pop(self):
@@ -26,10 +28,10 @@ class Stack:
         return True
 
 
-stk = Stack()
+stk = Stack([1, 5])
 
 stk.push(10)
 stk.push(20)
 
-print(stk.stack)
+print(stk.length())
     
