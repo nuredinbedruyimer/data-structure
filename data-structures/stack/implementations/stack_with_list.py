@@ -28,10 +28,11 @@ class Stack:
         return True
 
 
-stk = Stack([1, 5])
-
-stk.push(10)
-stk.push(20)
-
-print(stk.length())
+if __name__ =="__main__":
+    stk = Stack([1, 5])
+    
+    stk.push(10)
+    stk.push(20)
+    
+    print(stk.length())
     
