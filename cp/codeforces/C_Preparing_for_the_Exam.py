@@ -2,32 +2,35 @@ test = int(input())
 
 for _ in range(test):
     n, m, k = list(map(int, input().split()))
-    arr = list(map(int, input().split()))
-    brr = list(map(int, input().split()))
-    not_answered = set()
-    answer = set(brr)
-    ans = []
-    all_q = list(range(1, n + 1))
-    seen = set(all_q)
-    for a in all_q:
-        if a not in answer:
-            not_answered.add(a)  
-    if len(not_answered) >= 2:
-        ans = [False for _ in range(n)]
+    mrr = list(map(int, input().split()))
+    krr = list(map(int, input().split()))
+    all_questions = [i for i in range(1, n + 1)]
+    unknown_question = []
     
+    for question in all_questions:
+        if question not in krr:
+            unknown_question.append(question)
+    
+    #  case one
+    ans = ""
+    if len(unknown_question) >= 2:
+        for _ in range(m):
+            ans += "0"
+    elif len(unknown_question) == 0:
+        for _ in range(m):
+            ans += "1"
     else:
-        for i in range(m):
+        for ques in all_questions:
+            ans += "1" if ques == unknown_question[0] else "0"
+    print(ans)
             
-            seen.remove[all_q[i]]
-            for a in list(not_answered):
-                if a in seen:
-                    ans.append(False)
-                else:
-                    ans.append(True)
-            seen.add(all_q[i])
+        
+            
+    
+    
+
                 
                     
             
         
-    print(not_answered)    
             

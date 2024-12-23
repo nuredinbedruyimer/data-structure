@@ -9,7 +9,6 @@ for _ in range(test):
     
     remain = n % total
     temp = [a, b, c]
-    curr = 0
     
     
     for i in range(len(temp)):
