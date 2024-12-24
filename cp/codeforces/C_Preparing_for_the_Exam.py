@@ -1,36 +1,14 @@
-test = int(input())
-
-for _ in range(test):
-    n, m, k = list(map(int, input().split()))
-    mrr = list(map(int, input().split()))
-    krr = list(map(int, input().split()))
-    all_questions = [i for i in range(1, n + 1)]
-    unknown_question = []
-    
-    for question in all_questions:
-        if question not in krr:
-            unknown_question.append(question)
-    
-    #  case one
-    ans = ""
-    if len(unknown_question) >= 2:
-        for _ in range(m):
-            ans += "0"
-    elif len(unknown_question) == 0:
-        for _ in range(m):
-            ans += "1"
-    else:
-        for ques in all_questions:
-            ans += "1" if ques == unknown_question[0] else "0"
-    print(ans)
-            
-        
-            
-    
-    
-
-                
-                    
-            
-        
-            
+for _ in range(int(input())):
+    n, m, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    q = list(map(int, input().split()))
+    used = [False for i in range(n + 1)]
+    for i in q:
+        used[i] = True
+    l = len(q)
+    for i in range(m):
+        if l == n or (l == n-1 and not used[a[i]]):
+            print(1, end='')
+        else:
+            print(0, end='')
+    print()
